@@ -1,10 +1,5 @@
-# Lauris Nova
+Lauris Nova — Offshore Cook · Deckhand · Galley Steward
 
-Offshore Cook · Deckhand · Galley Steward
+Crab boats, whale boats, fishing boats, wind-farm vessels, oil and gas rigs, PSVs, tankers, supply ships, Holland and North Sea.
 
-Live domain: https://laurisnova.com/
-Netlify: https://laurisnova.netlify.app/
-
-WhatsApp NOVA +44 7397 163297
-Ireland +353 85 739 7826
-lauris@laurisnova.com
+Live: https://laurisnova.com/
