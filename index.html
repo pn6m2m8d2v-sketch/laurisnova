@@ -1,13 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Lauris Nova — Offshore Cook · Deckhand · Galley Steward</title>
-  <meta name="description" content="Offshore cook, deckhand and galley steward. Crab boats, whale boats, fishing boats, wind-farm vessels, oil and gas rigs, PSVs, tankers, supply ships, Holland and North Sea.">
-  <link rel="canonical" href="https://laurisnova.com/">
+  <meta name="description" content="Offshore cook, deckhand and galley steward. Crab boats, whale boats, fishing boats, wind-farm vessels, oil and gas rigs, PSVs, tankers, supply ships, Holland and North Sea." />
+  <meta property="og:title" content="Lauris Nova — Offshore Cook · Deckhand · Galley Steward" />
+  <meta property="og:description" content="I cook for the crew. I stay on deck. I do not get seasick. Ready for crab boats, fishing, whale boats, wind farms, oil & gas, PSVs and North Sea vessels." />
+  <meta property="og:url" content="https://laurisnova.com/" />
+  <link rel="canonical" href="https://laurisnova.com/" />
+  <style>
+    :root {
+      --bg: #05090b;
+      --fg: #eceae4;
+      --faint: #9aa3a0;
+      --accent: #c4a574;
+      --line: rgba(255,255,255,.12);
+      --border: rgba(255,255,255,.18);
+      --card: #0c1214;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.5;
+      min-height: 100dvh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 56rem; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(5,9,11,.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    header .inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 3.5rem; max-width: 56rem; margin: 0 auto; padding: 0 1.25rem;
+    }
+    header .brand { font-weight: 600; letter-spacing: .02em; color: var(--fg); }
+    header nav a {
+      display: inline-flex; align-items: center; height: 2.25rem;
+      padding: 0 .9rem; border-radius: 6px; background: var(--accent);
+      color: #14110e; font-weight: 600; font-size: .875rem; text-decoration: none;
+    }
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .75rem;
+    }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.75rem, 4.5vw, 2.6rem);
+      font-weight: 500; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .lede { color: var(--faint); font-size: 1.05rem; max-width: 36rem; margin-bottom: 1.5rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      height: 2.75rem; padding: 0 1rem; border-radius: 6px;
+      font-size: .875rem; font-weight: 500; text-decoration: none;
+      border: 1px solid var(--border); color: var(--fg); background: transparent;
+    }
+    .btn-primary {
+      background: var(--accent); color: #14110e; border-color: var(--accent); font-weight: 600;
+    }
+    .btn:hover { text-decoration: none; filter: brightness(1.08); }
+    .facts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .fact { border: 1px solid var(--line); border-radius: 8px; padding: .85rem 1rem; background: var(--card); }
+    .fact .label { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); }
+    .fact .value { font-weight: 600; margin-top: .15rem; }
+    section { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }
+    section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem; font-weight: 500; margin-bottom: .75rem;
+    }
+    .about-body { color: var(--faint); max-width: 40rem; margin-bottom: 1rem; }
+    .story-list { list-style: none; display: grid; gap: .65rem; margin-top: 1rem; }
+    .story-list li {
+      border-left: 2px solid var(--accent); padding: .4rem 0 .4rem .9rem;
+      color: var(--fg); font-size: .95rem;
+    }
+    .tickets { display: grid; gap: 1.25rem; margin-top: 1rem; }
+    .ticket-group h3 {
+      font-size: .8rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--accent); margin-bottom: .5rem;
+    }
+    .ticket-group ul { list-style: none; display: grid; gap: .35rem; }
+    .ticket-group li { font-size: .9rem; color: var(--faint); padding-left: .1rem; }
+    .hire-box {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 10px; padding: 1.5rem; margin-top: 1rem;
+    }
+    .langs { margin-top: 1rem; font-size: .9rem; color: var(--faint); }
+    footer {
+      padding: 1.5rem 0 calc(1.5rem + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line); font-size: .75rem; color: var(--faint);
+    }
+    footer .inner {
+      max-width: 56rem; margin: 0 auto; padding: 0 1.25rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem;
+    }
+    .ids { font-size: .8rem; color: var(--faint); margin-bottom: 1.25rem; }
+    .ids span { margin-right: 1rem; white-space: nowrap; }
+  </style>
 </head>
 <body>
-<p>See artifacts deploy: full styled page committed separately if this stub is replaced.</p>
+  <header>
+    <div class="inner">
+      <a class="brand" href="#top">Lauris Nova</a>
+      <nav><a href="#hire">Hire</a></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="wrap">
+        <p class="ids">
+          <span>Ireland PPS</span>
+          <span>Norway D-number</span>
+          <span>Iceland Kennitala</span>
+          <span>Spain NIE</span>
+          <span>Latvia Personas kods</span>
+          <span>United Kingdom NINO</span>
+        </p>
+        <p class="kicker">Offshore Cook · Deckhand · Galley Steward</p>
+        <h1>I cook for the crew. I stay on deck. I do not get seasick.</h1>
+        <p class="lede">
+          Twenty-five years feeding people under pressure. Molde, Norway. Own steel sailboat.
+          Ready for crab boats, whale boats, fishing boats, wind-farm vessels, oil and gas rigs,
+          PSVs, tankers, supply ships — Holland and North Sea.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/447397163297" target="_blank" rel="noopener">WhatsApp NOVA</a>
+          <a class="btn" href="/cv.pdf" download="Lauris_Bremmers_CV.pdf">Email / Download CV</a>
+          <a class="btn" href="mailto:lauris@laurisnova.com">lauris@laurisnova.com</a>
+          <a class="btn" href="tel:+353857397826">Call Ireland</a>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="label">Years cooking</div><div class="value">25+</div></div>
+          <div class="fact"><div class="label">Sailboat</div><div class="value">Kees, 36.6 ft steel</div></div>
+          <div class="fact"><div class="label">Norway</div><div class="value">Molde 2014–16 · D-number</div></div>
+          <div class="fact"><div class="label">Passports</div><div class="value">Latvia (EU) · Irish in process</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About / The work -->
+    <section>
+      <div class="wrap">
+        <h2>The work</h2>
+        <p class="about-body">
+          Galley is the main job. Deck I can do. I am a cook — not a rigger, not a roustabout.
+          Open for offshore vessels if you train me on specific deck tasks. I work long hours in the cold,
+          feed a hungry crew, and stay at sea. I own a 36.6 ft steel sailboat named Kees. No seasickness.
+        </p>
+        <p class="about-body">
+          Target vessels: crab boats, whale boats, fishing boats, wind-farm vessels, oil and gas rigs,
+          PSVs, tankers, supply ships, Holland and North Sea.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience — sea-relevant only -->
+    <section>
+      <div class="wrap">
+        <h2>Experience</h2>
+        <p class="about-body" style="margin-bottom:1rem">
+          All kitchen years are presented by the skills that matter at sea: volume, seafood, long hours, cold, hygiene.
+        </p>
+        <ul class="story-list">
+          <li>High-volume production and continuous service under pressure — equivalent to feeding a full crew on rotation.</li>
+          <li>Seafood and fish handling (fresh fishmongery, specialised fish dishes, Japanese/Asian seafood techniques).</li>
+          <li>Strict Level 3 HACCP, temperature control, stock rotation and galley hygiene (MLC 2006 ready).</li>
+          <li>Long hours, physical work, early starts and late finishes — used to cold and confined spaces.</li>
+          <li>Sunn Og Num, Molde &amp; Ålesund, Norway 2014–2016 — sushi, wok, high-volume service in Norwegian coastal conditions; D-number held.</li>
+          <li>Own 36.6 ft Dutch steel sailboat Kees — long time at sea, cold is fine, no seasickness. Practical deck experience.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tickets / Skills -->
+    <section>
+      <div class="wrap">
+        <h2>Current tickets</h2>
+        <div class="tickets">
+          <div class="ticket-group">
+            <h3>STCW Basic Safety — Stream Marine, Glasgow</h3>
+            <ul>
+              <li>STCW Personal Survival Techniques (PST)</li>
+              <li>STCW Fire Prevention &amp; Fire Fighting</li>
+              <li>STCW Elementary First Aid</li>
+              <li>STCW Personal Safety &amp; Social Responsibilities (PSSR)</li>
+              <li>STCW Security Awareness (ISPS)</li>
+            </ul>
+          </div>
+          <div class="ticket-group">
+            <h3>OPITO and NCS — 3t Training, Dyce</h3>
+            <ul>
+              <li>OPITO BOSIET with CA-EBS (Code 5750)</li>
+              <li>OPITO BOSIET with EBS (Code 5700)</li>
+              <li>OPITO MIST (Code 5301)</li>
+              <li>Norwegian Escape Chute</li>
+              <li>OPITO Shoulder Breadth — 49.7 cm Non-XBR</li>
+            </ul>
+          </div>
+          <div class="ticket-group">
+            <h3>Medicals and fit tests</h3>
+            <ul>
+              <li>ENG1 Seafarer Medical (MCA)</li>
+              <li>OEUK Offshore Medical &amp; Fit to Train</li>
+              <li>Dräger FPS 7000 Face Fit — Large</li>
+            </ul>
+          </div>
+          <div class="ticket-group">
+            <h3>Galley</h3>
+            <ul>
+              <li>Food Hygiene Level 3 HACCP (MLC 2006 galley)</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:1.25rem;color:var(--faint);font-size:.95rem">
+          Oil · gas · supply — Same man. Galley or deck. Rig in the far, boat beside.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hire / Contact -->
+    <section id="hire">
+      <div class="wrap">
+        <h2>Available now</h2>
+        <div class="hire-box">
+          <p style="margin-bottom:.75rem">
+            Cook, galley steward, or deckhand. Norway first — crab, fishing, whale boats —
+            then oil, gas, wind, supply and North Sea vessels. I can take a call, WhatsApp or Zoom any day.
+            Please text WhatsApp: <strong>NOVA</strong>.
+          </p>
+          <div class="cta-row" style="margin-bottom:0">
+            <a class="btn btn-primary" href="https://wa.me/447397163297" target="_blank" rel="noopener">Chat now · WhatsApp NOVA</a>
+            <a class="btn" href="mailto:lauris@laurisnova.com?subject=Cook%20%2F%20galley%20%2F%20deck%20%E2%80%94%20Lauris%20Bremmers">Email CV</a>
+            <a class="btn" href="tel:+353857397826">Call Ireland +353 85 739 7826</a>
+            <a class="btn" href="/cv.pdf" download="Lauris_Bremmers_CV.pdf">Download CV</a>
+          </div>
+          <p class="langs">
+            Latvian · Russian · English · Ukrainian (understand) · some Norwegian · some Spanish
+          </p>
+          <p style="margin-top:.75rem;font-size:.85rem;color:var(--faint)">
+            WhatsApp +44 7397 163297 (NOVA) · Ireland +353 85 739 7826 · lauris@laurisnova.com
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <span>Lauris Nova · Offshore cook at sea</span>
+      <a href="/cv.pdf" download>Download CV</a>
+      <span>Blessington, Ireland</span>
+    </div>
+  </footer>
 </body>
 </html>
