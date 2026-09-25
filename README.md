@@ -1,6 +1,6 @@
 # Lauris Nova — Offshore Cook · Deckhand · Galley Steward
 
-100% offshore-only site. No land jobs, restaurants, hotels, construction, airports or non-sea work in visible text.
+**100% offshore-only.** No land jobs, restaurants, hotels, construction, airports or non-sea work in visible text.
 
 **Headline:** Offshore Cook · Deckhand · Galley Steward
 
@@ -15,7 +15,12 @@
 
 **Structure kept:** hero, about/the work, experience, skills/tickets, contact, CV download.
 
-Live domain (Namecheap hosting): https://laurisnova.com/  
-GitHub source + Netlify mirror: this repo / laurisnova.netlify.app
+## Live
+- **Netlify (updated, 100% offshore):** https://laurisnova.netlify.app/
+- **Custom domain (Namecheap/LiteSpeed):** https://laurisnova.com/ — still serving older build with land-job list. Upload `index.html` + `cv.pdf` from this repo to the Namecheap hosting file manager to switch it over.
 
-Updated CV (boats-first Version 1) generated as Lauris_Bremmers_CV_Offshore.pdf — upload to replace /cv.pdf on the live host.
+## Files
+- `index.html` — full offshore-only page
+- `cv.pdf` — boats-first Version 1 CV (upload this to replace the live CV)
+
+Generated CV also available locally as `Lauris_Bremmers_CV_Offshore.pdf`.
