@@ -1,0 +1,17 @@
+html {
+  overflow-y: scroll !important;
+  height: auto !important;
+  max-height: none !important;
+}
+body {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+button[aria-label="Skip"],
+button[aria-label="Hopp over"],
+button[aria-label="Overslaan"],
+.tanker-vid,
+.splash-vid {
+  pointer-events: none !important;
+}

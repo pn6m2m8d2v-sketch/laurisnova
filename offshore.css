@@ -1,0 +1,18 @@
+:root { color-scheme: dark; }
+body { font-family: Figtree, ui-sans-serif, system-ui, sans-serif; background: #030607; color: #f4f1ea; }
+.font-display { font-family: "Instrument Serif", Georgia, serif; }
+.text-accent { color: #d7a15a; }
+.bg-accent { background: #d7a15a; }
+.text-accent-fg { color: #1a1208; }
+.bg-bg { background: #030607; }
+.text-fg { color: #f4f1ea; }
+.text-muted, .text-faint { color: #c9c2b4; }
+.border-line, .border-border { border-color: rgba(255,255,255,.14); }
+.iphone-glass, .liquid-chip { background: rgba(8,16,22,.72); border: 1px solid rgba(255,255,255,.16); color: #fff; backdrop-filter: blur(8px); }
+.id-rail { display: flex; gap: .5rem; overflow-x: auto; }
+.id-chip { display: flex; align-items: center; gap: .4rem; padding: .35rem .5rem; border-radius: .6rem; min-width: max-content; }
+.id-flag { width: 18px; height: 12px; object-fit: cover; }
+.speak-list { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
+.speak-chip { display: inline-flex; align-items: center; gap: .4rem; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: .3rem .6rem; }
+.speak-chip img { width: 16px; height: 11px; }
+.food-windows { display: none; }
